@@ -1,6 +1,6 @@
 package com.project.cotroller;
 
-import com.project.model.entity.CreditApplicationResult;
+import com.project.model.api.response.CreditApplicationResultResponse;
 import com.project.service.CreditApplicationResultService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,7 @@ public class CreditApplicationResultController {
     private final CreditApplicationResultService creditApplicationService;
 
     @GetMapping("/{id}")
-    public CreditApplicationResult getCreditApplicationResult(@PathVariable Long id) {
+    public CreditApplicationResultResponse getCreditApplicationResult(@PathVariable Long id) {
         return creditApplicationService.findById(id);
     }
 

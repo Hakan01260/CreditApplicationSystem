@@ -1,6 +1,5 @@
 package com.project.service.implementations;
 
-import com.project.model.api.response.CheckCreditLimitResponse;
 import com.project.model.entity.Credit;
 import com.project.model.entity.CreditScoreRule;
 import com.project.model.entity.Customer;

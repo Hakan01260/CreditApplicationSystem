@@ -37,7 +37,7 @@ public class CreditApplicationSystemApplication implements CommandLineRunner {
     @Transactional
     public void run(String... args) throws Exception {
 
-        Customer customer = new Customer(1234568l,"ferhat","sensei",4500,"05555550l");
+        Customer customer = new Customer(1234568l,"hakan","erdogan",4500,"05555550");
         customerRepository.save(customer);
 
         CreditScoreRule creditScoreRule1 = new CreditScoreRule(0, 500, 0, 5000, CreditScoreRuleResult.REJECTED);

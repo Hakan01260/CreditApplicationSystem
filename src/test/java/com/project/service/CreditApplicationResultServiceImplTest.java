@@ -47,7 +47,7 @@ class CreditApplicationResultServiceImplTest {
     @Test
     public void it_should_find_credit_application_result_when_credit_application_result_is_exists(){
         // Given
-        Long id = 12312L;
+        Long id = 1234568L;
 
         CreditApplicationResult creditApplicationResult = new CreditApplicationResult();
         creditApplicationResult.setId(id);

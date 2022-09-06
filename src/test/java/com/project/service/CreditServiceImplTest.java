@@ -1,8 +1,6 @@
 package com.project.service;
 
 import com.project.model.entity.Credit;
-import com.project.model.entity.Customer;
-import com.project.model.enums.CreditScoreRuleResult;
 import com.project.model.exception.NotFoundException;
 import com.project.repository.CreditRepository;
 import com.project.service.implementations.CreditServiceImpl;

@@ -1,5 +1,6 @@
 package com.project.service.implementations;
 
+import com.project.model.api.response.CreditApplicationResultResponse;
 import com.project.model.entity.CreditApplicationResult;
 import com.project.model.exception.NotFoundException;
 import com.project.repository.CreditApplicationResultRepository;
@@ -17,11 +18,17 @@ public class CreditApplicationResultServiceImpl implements CreditApplicationResu
     private final CreditApplicationResultRepository repository;
 
     @Transactional(readOnly = true)
-    public CreditApplicationResult findById(Long id){
+    public CreditApplicationResultResponse findById(Long id){
         Optional<CreditApplicationResult> optionalCreditApplicationResult = repository.findById(id);
         if (!optionalCreditApplicationResult.isPresent()){
             throw new NotFoundException("CreditApplicationResult not found by id :" + id);
         }
-        return optionalCreditApplicationResult.get();
+        CreditApplicationResult creditApplicationResult = optionalCreditApplicationResult.get();
+        return new CreditApplicationResultResponse(
+                creditApplicationResult.getId(),
+                creditApplicationResult.isResult(),
+                creditApplicationResult.getCreditLimit(),
+                creditApplicationResult.getCreatedDate(),
+                creditApplicationResult.getCustomer().getId());
     }
 }
